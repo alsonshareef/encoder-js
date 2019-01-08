@@ -1,4 +1,6 @@
-let encoder = (codedString) => {
+
+// Returns amount of consecutive numbers of passed in string
+let counter = (codedString) => {
     output = []
     numberAmount = 0
 
@@ -16,4 +18,14 @@ let encoder = (codedString) => {
     return output
 }
 
-console.log(encoder('11100010001'))
+console.log(counter('010'))
+
+
+
+// Returns type and number
+let encoder = (codedString) => {
+    for(let i = 0; i < codedString.length; i++){
+        // Number
+
+    }
+}
