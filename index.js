@@ -1,31 +1,42 @@
-
-// Returns amount of consecutive numbers of passed in string
-let counter = (codedString) => {
-    output = []
-    numberAmount = 0
-
+var counter = (codedString) => {
+    // 'output' will be an array of numbers indicating amount of consecutive numbers
+    let output = ''
+    let numberAmount = 0
     for( let i = 0; i < codedString.length; i++ ){
         if( i !== 0 ){
             if( codedString[i] !== codedString[i-1] ){
-                output.push(numberAmount)
+              let type = '', zeros = ''
+              
+              // Type
+                  if(codedString[i-1] === '0'){
+                    type = '00'
+                } else {
+                    type = '0'
+                }
+              
+              // Number
+                for(let i = 0; i < numberAmount; i++){
+                    zeros += '0'
+                }
+              
+                output += `${type} ${zeros} `
                 numberAmount = 0
             }
         } 
         numberAmount++
     }
-
-    output.push(numberAmount)
+   
+   let type = '', zeros = ''
+   if(codedString[codedString.length - 1] === '0'){
+     type = '00'
+   } else {
+     type = '0'
+   }
+   for(let i = 0; i < numberAmount; i++){
+     zeros += '0'
+   }
+   output += `${type} ${zeros} `
     return output
 }
 
-console.log(counter('010'))
-
-
-
-// Returns type and number
-let encoder = (codedString) => {
-    for(let i = 0; i < codedString.length; i++){
-        // Number
-
-    }
-}
+console.log(counter('010111'))
