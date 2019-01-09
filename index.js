@@ -1,5 +1,6 @@
-var counter = (codedString) => {
-    // 'output' will be an array of numbers indicating amount of consecutive numbers
+
+// ENCODER
+var encoder = (codedString) => {
     let output = ''
     let numberAmount = 0
     for( let i = 0; i < codedString.length; i++ ){
@@ -41,4 +42,24 @@ var counter = (codedString) => {
     return output
 }
 
-console.log(counter('010111'))
+console.log(encoder('001001110'))
+
+// DECODER
+var decoder = (encodedString) => {
+    let output = '', a = encodedString.split(' ')
+      for(let i = 0; i < a.length; i+=2){
+              if(a[i] === '00'){
+          output += Array(a[i+1].length+1).join('0')
+        //        Array('0000'.length+1).join('0')
+        //        Array(4+1).join('0')
+        //        Array(5).join('0')
+        //        [null,null,null,null,null].join('0')
+        //        00000
+      } else {
+          output += Array(a[i+1].length+1).join('1')
+      }
+    }
+    return output
+  }
+
+  console.log(decoder("00 00 0 0 00 00 0 000 00 0"))
