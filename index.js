@@ -26,16 +26,18 @@ var counter = (codedString) => {
         numberAmount++
     }
    
-   let type = '', zeros = ''
-   if(codedString[codedString.length - 1] === '0'){
-     type = '00'
-   } else {
-     type = '0'
-   }
-   for(let i = 0; i < numberAmount; i++){
-     zeros += '0'
-   }
-   output += `${type} ${zeros} `
+    let type = '', zeros = ''
+
+    if(codedString[codedString.length - 1] === '0'){
+        type = '00'
+    } else {
+        type = '0'
+    }
+
+    for(let i = 0; i < numberAmount; i++){
+        zeros += '0'
+    }
+    output += `${type} ${zeros} `
     return output
 }
 
