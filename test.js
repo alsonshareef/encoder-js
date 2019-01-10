@@ -12,7 +12,7 @@ let encoderTest = () => {
     }
 }
 
-encoderTest()
+// encoderTest()
 
 // Decoder Test
 
@@ -27,4 +27,19 @@ let decoderTest = () => {
     }
 }
 
-decoderTest()
+// decoderTest()
+
+// Decoder Test with space
+
+let decoderTestWithSpace = () => {
+    let string = "00 00 0 0 00 00 0 000 00 0 " // Added space on end of string
+    let expectedOutput = '001001110'
+
+    if (decoder(string) === expectedOutput) {
+        console.log(`** PASSED ** The returned value from the 'decoder' function is EQUAL to expected output`)
+    } else {
+        console.log(`** FAILED ** The returned value from the 'decoder' function is NOT EQUAL to expected output`)
+    }
+}
+
+decoderTestWithSpace()

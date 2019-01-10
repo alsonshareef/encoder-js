@@ -44,6 +44,7 @@ exports.encoder = (codedString) => {
 
 // DECODER
 exports.decoder = (encodedString) => {
+    encodedString = encodedString.trim()
     let output = '', a = encodedString.split(' ')
       for(let i = 0; i < a.length; i+=2){
         if(a[i] === '00'){
