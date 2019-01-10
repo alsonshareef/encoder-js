@@ -46,7 +46,7 @@ exports.encoder = (codedString) => {
 exports.decoder = (encodedString) => {
     let output = '', a = encodedString.split(' ')
       for(let i = 0; i < a.length; i+=2){
-              if(a[i] === '00'){
+        if(a[i] === '00'){
           output += Array(a[i+1].length+1).join('0')
         //        Array('0000'.length+1).join('0')
         //        Array(4+1).join('0')
